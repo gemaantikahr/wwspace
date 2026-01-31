@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW Space - Work. Smash. Splash.</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-brand-offwhite text-brand-charcoal font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-4 px-4">
+        <div class="max-w-7xl mx-auto bg-white/90 backdrop-blur-md rounded-2xl shadow-sm border border-gray-100 p-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold tracking-tight">WW <span
+                        class="text-brand-amber">Space</span></a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="cafe.html" class="hover:text-brand-amber transition-colors font-medium">Cafe</a>
+                    <a href="arena.html" class="hover:text-brand-amber transition-colors font-medium">Arena</a>
+                    <a href="billiards.html" class="hover:text-brand-amber transition-colors font-medium">Billiards</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-brand-charcoal focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 flex flex-col space-y-4">
+                <a href="cafe.html"
+                    class="block w-full text-center py-2 hover:bg-gray-50 rounded-xl transition-colors">Cafe</a>
+                <a href="arena.html"
+                    class="block w-full text-center py-2 hover:bg-gray-50 rounded-xl transition-colors">Arena</a>
+                <a href="billiards.html"
+                    class="block w-full text-center py-2 hover:bg-gray-50 rounded-xl transition-colors">Billiards</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-28 pb-12 px-4">
+        <div class="max-w-7xl mx-auto space-y-8">
+            <!-- Hero Section -->
+            <section
+                class="relative h-[60vh] rounded-2xl overflow-hidden shadow-lg flex items-center justify-center text-center px-4 group">
+                <img src="./assets/images/hero_v2.png" alt="WW Space Hub"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-brand-charcoal/50 z-10"></div>
+
+                <div class="relative z-20 max-w-4xl mx-auto">
+                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">Work. Smash. <span
+                            class="text-brand-amber">Splash.</span></h1>
+                    <p class="text-xl md:text-2xl text-gray-100 font-light drop-shadow-md">Community Lifestyle Hub in
+                        Mataram</p>
+                </div>
+            </section>
+
+            <!-- 3-Column Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Cafe Card -->
+                <a href="cafe.html"
+                    class="group relative h-96 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <img src="./assets/images/cafe.png" alt="WW Cafe"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-brand-charcoal/40 to-transparent transition-opacity duration-300">
+                    </div>
+
+                    <div class="absolute inset-0 flex flex-col justify-end p-8 z-10">
+                        <div
+                            class="h-16 w-16 mb-4 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-sm text-brand-amber border border-white/20">
+                            <!-- Coffee Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18 8h1.4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-1.4c0 .83.67 1.5 1.5 1.5H19a2 2 0 012 2v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1a2 2 0 012-2h.1c.83 0 1.5-.67 1.5-1.5H5.4c-.83 0-1.5-.67-1.5-1.5S4.57 8 5.4 8H6" />
+                            </svg>
+                        </div>
+                        <h2
+                            class="text-3xl font-bold text-white group-hover:translate-x-2 transition-transform drop-shadow-md">
+                            WW Cafe</h2>
+                        <p class="text-gray-200 mt-2 font-medium">Deep Work & Fuel</p>
+                    </div>
+                </a>
+
+                <!-- Arena Card -->
+                <a href="arena.html"
+                    class="group relative h-96 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <img src="./assets/images/arena.png" alt="Wawa Arena"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-brand-charcoal/40 to-transparent transition-opacity duration-300">
+                    </div>
+
+                    <div class="absolute inset-0 flex flex-col justify-end p-8 z-10">
+                        <div
+                            class="h-16 w-16 mb-4 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-sm text-brand-amber border border-white/20">
+                            <!-- Badminton Icon (Lightning/Activity) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h2
+                            class="text-3xl font-bold text-white group-hover:translate-x-2 transition-transform drop-shadow-md">
+                            Wawa Arena</h2>
+                        <p class="text-gray-200 mt-2 font-medium">Badminton Excellence</p>
+                    </div>
+                </a>
+
+                <!-- Billiards Card (Updated) -->
+                <a href="billiards.html"
+                    class="group relative h-96 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <img src="./assets/images/billiards.png" alt="Billiards Hall"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-brand-charcoal/40 to-transparent transition-opacity duration-300">
+                    </div>
+
+                    <div class="absolute inset-0 flex flex-col justify-end p-8 z-10">
+                        <div
+                            class="h-16 w-16 mb-4 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-sm text-brand-amber border border-white/20">
+                            <!-- Billiards Icon (8 Ball) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <circle cx="12" cy="12" r="10" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="12" cy="12" r="4" fill="currentColor" />
+                                <text x="12" y="12" font-size="6" text-anchor="middle" fill="white" dy=".3em"
+                                    font-weight="bold">8</text>
+                            </svg>
+                        </div>
+                        <h2
+                            class="text-3xl font-bold text-white group-hover:translate-x-2 transition-transform drop-shadow-md">
+                            Billiards</h2>
+                        <p class="text-gray-200 mt-2 font-medium">Focus & Precision</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Social Proof Section (Bento Grid) -->
+            <section class="py-16 bg-brand-offwhite/30">
+                <div class="max-w-7xl mx-auto px-4">
+                    <!-- Header -->
+                    <div class="text-center mb-12">
+                        <div class="inline-block relative mb-4">
+                            <span
+                                class="text-brand-amber font-bold tracking-wider text-sm uppercase">Testimonials</span>
+                            <div class="absolute -top-1 -right-3 text-brand-amber text-xs">¬</div>
+                            <div class="absolute -bottom-1 -left-3 text-brand-amber text-xs">_</div>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-bold text-brand-charcoal mb-4">Results that speak volume
+                        </h2>
+                        <h3 class="text-3xl md:text-4xl font-light text-gray-500 mb-6">Read success stories</h3>
+                        <p class="text-gray-500 max-w-xl mx-auto">Find out how our community is raving about their
+                            experience at WW Space.</p>
+                    </div>
+
+                    <!-- Bento Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+
+                        <!-- Left Column: Large Vertical Card -->
+                        <div id="testimonial-card-0"
+                            class="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col justify-between h-full hover:shadow-md transition-all duration-700 ease-in-out group">
+                            <div>
+                                <h3 class="text-6xl font-bold text-brand-charcoal mb-2">10/10</h3>
+                                <p class="text-xl font-medium text-gray-600 mb-8">Court Quality Rating</p>
+
+                                <div class="text-brand-amber text-4xl font-serif mb-4">”</div>
+                                <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                    "We needed a professional venue for our regional tournament, and WW Space delivered
+                                    beyond expectations. The flooring grip and non-glare lighting helped us perform at
+                                    our peak. Highly recommend for serious players!"
+                                </p>
+                            </div>
+
+                            <div class="flex items-center mt-auto">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-bold text-lg mr-4">
+                                    S</div>
+                                <div>
+                                    <h4 class="font-bold text-brand-charcoal">Sarah Mitchell</h4>
+                                    <p class="text-xs text-gray-500 uppercase tracking-wide">Tournament Organizer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Mixed Grid -->
+                        <div class="lg:col-span-2 flex flex-col gap-6">
+
+                            <!-- Top Right: Wide Card -->
+                            <div id="testimonial-card-1"
+                                class="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 hover:shadow-md transition-all duration-700 ease-in-out group">
+                                <div class="flex-1">
+                                    <h3 class="text-3xl font-bold text-brand-charcoal mb-2">2X</h3>
+                                    <p class="text-lg font-medium text-gray-600 mb-4">Productivity Boost</p>
+
+                                    <div class="text-brand-amber text-4xl font-serif mb-2">”</div>
+                                    <p class="text-gray-600 leading-relaxed mb-6">
+                                        "From the fast wifi to the amazing cold brew, every detail is meticulously
+                                        handled. The vibe helped me launch my project faster!"
+                                    </p>
+
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white font-bold mr-3">
+                                            D</div>
+                                        <div>
+                                            <h4 class="font-bold text-brand-charcoal text-sm">David Callahan</h4>
+                                            <p class="text-xs text-gray-500">Freelance Designer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Right: Two Split Cards -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
+                                <!-- Small White Card -->
+                                <div id="testimonial-card-2"
+                                    class="bg-white rounded-[2rem] p-8 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition-all duration-700 ease-in-out min-h-[300px] group">
+                                    <div>
+                                        <div class="text-brand-amber text-4xl font-serif mb-2">”</div>
+                                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                            "Their animation work took our product videos to the next level. The team
+                                            truly understands user experience and storytelling."
+                                        </p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold mr-3">
+                                            T</div>
+                                        <div>
+                                            <h4 class="font-bold text-brand-charcoal text-sm">Tom Becker</h4>
+                                            <p class="text-xs text-gray-500">Founder, PulseCore</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Small Dark Card -->
+                                <div id="testimonial-card-3"
+                                    class="bg-[#1a1a1a] rounded-[2rem] p-8 shadow-sm flex flex-col justify-between text-white hover:shadow-md transition-all duration-700 ease-in-out min-h-[300px] group">
+                                    <div>
+                                        <div class="text-brand-amber text-4xl font-serif mb-2">”</div>
+                                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                            "The team nailed our MVP design with a fast turnaround. The final product
+                                            felt polished and professional."
+                                        </p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white font-bold mr-3">
+                                            J</div>
+                                        <div>
+                                            <h4 class="font-bold text-white text-sm">Jessica L.</h4>
+                                            <p class="text-xs text-gray-400">Marketing Director</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CSS for 3D Flip and Nudge -->
+                    <style>
+                        .perspective-1000 {
+                            perspective: 1000px;
+                        }
+
+                        .preserve-3d {
+                            transform-style: preserve-3d;
+                        }
+
+                        .backface-hidden {
+                            backface-visibility: hidden;
+                            -webkit-backface-visibility: hidden;
+                        }
+
+                        .rotate-y-180 {
+                            transform: rotateY(180deg);
+                        }
+
+                        .grid-stack {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            grid-template-rows: 1fr;
+                        }
+
+                        .grid-stack>* {
+                            grid-column: 1;
+                            grid-row: 1;
+                        }
+
+                        @keyframes nudge-spin {
+
+                            0%,
+                            100% {
+                                transform: rotateY(0deg);
+                            }
+
+                            20% {
+                                transform: rotateY(20deg);
+                            }
+
+                            40% {
+                                transform: rotateY(-15deg);
+                            }
+
+                            60% {
+                                transform: rotateY(10deg);
+                            }
+
+                            80% {
+                                transform: rotateY(-5deg);
+                            }
+                        }
+
+                        .animate-nudge {
+                            animation: nudge-spin 1.5s ease-out forwards;
+                            animation-delay: 0.5s;
+                        }
+                    </style>
+
+                    <script>
+                        // Testimonial Data Pool (8 Items)
+                        const testimonials = [
+                            // Slot 0 (Large Vertical)
+                            {
+                                headline: "10/10",
+                                subhead: "Court Quality Rating",
+                                quote: "We needed a professional venue for our regional tournament, and WW Space delivered beyond expectations. The flooring grip and non-glare lighting helped us perform at our peak. Highly recommend for serious players!",
+                                initial: "S",
+                                name: "Sarah Mitchell",
+                                role: "Tournament Organizer",
+                                color: "gray",
+                                type: "large"
+                            },
+                            {
+                                headline: "Prime",
+                                subhead: "Location & Vibe",
+                                quote: "I've been to every court in the city, but nothing beats the atmosphere here. The high ceilings are a game-changer, and the post-game chill spot at the cafe makes it a complete experience.",
+                                initial: "R",
+                                name: "Rian Santoso",
+                                role: "Pro Badminton Coach",
+                                color: "blue",
+                                type: "large"
+                            },
+
+                            // Slot 1 (Wide Horizontal)
+                            {
+                                headline: "2X",
+                                subhead: "Productivity Boost",
+                                quote: "From the fast wifi to the amazing cold brew, every detail is meticulously handled. The vibe helped me launch my project faster!",
+                                initial: "D",
+                                name: "David Callahan",
+                                role: "Freelance Designer",
+                                color: "gray",
+                                type: "wide"
+                            },
+                            {
+                                headline: "100%",
+                                subhead: "Focus Mode",
+                                quote: "The coworking area just flows. I can take calls without worrying about noise, and the ergonomic chairs are a lifesaver for long coding sessions. It's my second office.",
+                                initial: "A",
+                                name: "Amanda Lee",
+                                role: "Software Engineer",
+                                color: "indigo",
+                                type: "wide"
+                            },
+
+                            // Slot 2 (Small Square 1)
+                            {
+                                quote: "Their animation work took our product videos to the next level. The team truly understands user experience and storytelling.",
+                                initial: "T",
+                                name: "Tom Becker",
+                                role: "Founder, PulseCore",
+                                color: "orange",
+                                type: "small"
+                            },
+                            {
+                                quote: "I love that I can transition from a heated match straight to a comfortable meeting. The showers are hotel-quality clean!",
+                                initial: "K",
+                                name: "Kevin Tan",
+                                role: "Biz Dev Manager",
+                                color: "green",
+                                type: "small"
+                            },
+
+                            // Slot 3 (Small Square 2)
+                            {
+                                quote: "The team nailed our MVP design with a fast turnaround. The final product felt polished and professional.",
+                                initial: "J",
+                                name: "Jessica L.",
+                                role: "Marketing Director",
+                                color: "gray",
+                                type: "small"
+                            },
+                            {
+                                quote: "The billiards setup is legit. Perfect lighting and well-maintained tables. It's our Friday night staple now.",
+                                initial: "M",
+                                name: "Michael Chen",
+                                role: "Architect",
+                                color: "red",
+                                type: "small"
+                            }
+                        ];
+
+                        // Configuration
+                        const cardConfigs = [
+                            { id: 'testimonial-card-0', pair: [0, 1] },
+                            { id: 'testimonial-card-1', pair: [2, 3] },
+                            { id: 'testimonial-card-2', pair: [4, 5] },
+                            { id: 'testimonial-card-3', pair: [6, 7] }
+                        ];
+
+                        function getCardContent(data, isDark) {
+                            const textColorMain = isDark ? 'text-white' : 'text-brand-charcoal';
+                            const textColorSub = isDark ? 'text-gray-300' : 'text-gray-600';
+                            const textColorMuted = isDark ? 'text-gray-400' : 'text-gray-500';
+                            const bgAvatar = isDark ? 'bg-gray-700' : 'bg-gray-200';
+                            const textAvatar = isDark ? 'text-white' : 'text-gray-500';
+
+                            if (data.type === 'large') {
+                                return `
+                            <div>
+                                <h3 class="text-6xl font-bold ${textColorMain} mb-2">${data.headline}</h3>
+                                <p class="text-xl font-medium ${textColorSub} mb-8">${data.subhead}</p>
+                                <div class="text-brand-amber text-4xl font-serif mb-4">”</div>
+                                <p class="${textColorSub} text-lg leading-relaxed mb-8">"${data.quote}"</p>
+                            </div>
+                            <div class="flex items-center mt-auto">
+                                <div class="w-12 h-12 rounded-full ${bgAvatar} flex items-center justify-center ${textAvatar} font-bold text-lg mr-4 shrink-0 shadow-sm">${data.initial}</div>
+                                <div>
+                                    <h4 class="font-bold ${textColorMain}">${data.name}</h4>
+                                    <p class="text-xs ${textColorMuted} uppercase tracking-wide">${data.role}</p>
+                                </div>
+                            </div>
+                        `;
+                            } else if (data.type === 'wide') {
+                                return `
+                             <div class="flex-1">
+                                <h3 class="text-3xl font-bold ${textColorMain} mb-2">${data.headline}</h3>
+                                <p class="text-lg font-medium ${textColorSub} mb-4">${data.subhead}</p>
+                                <div class="text-brand-amber text-4xl font-serif mb-2">”</div>
+                                <p class="${textColorSub} leading-relaxed mb-6">"${data.quote}"</p>
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 rounded-full ${bgAvatar} flex items-center justify-center ${textAvatar} font-bold mr-3 shrink-0 shadow-sm">${data.initial}</div>
+                                    <div>
+                                        <h4 class="font-bold ${textColorMain} text-sm">${data.name}</h4>
+                                        <p class="text-xs ${textColorMuted}">${data.role}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                            } else { // small
+                                return `
+                             <div>
+                                <div class="text-brand-amber text-4xl font-serif mb-2">”</div>
+                                <p class="${textColorSub} text-sm leading-relaxed mb-6">"${data.quote}"</p>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full ${bgAvatar} flex items-center justify-center ${textAvatar} font-bold mr-3 shrink-0 shadow-sm">${data.initial}</div>
+                                <div>
+                                    <h4 class="font-bold ${textColorMain} text-sm">${data.name}</h4>
+                                    <p class="text-xs ${textColorMuted}">${data.role}</p>
+                                </div>
+                            </div>
+                        `;
+                            }
+                        }
+
+                        function initSlider(config, index) {
+                            const container = document.getElementById(config.id);
+                            if (!container) return;
+
+                            container.classList.add('overflow-hidden', 'relative', 'cursor-grab', 'active:cursor-grabbing', 'bg-white');
+                            container.innerHTML = ''; // Start fresh
+
+                            // 1. Create Track (The Flipper)
+                            const track = document.createElement('div');
+                            track.className = 'w-full h-full relative transition-transform duration-700 ease-out preserve-3d grid-stack animate-nudge';
+                            track.style.animationDelay = `${0.5 + (index * 0.2)}s`;
+
+                            // Remove sizing/visual classes from container to rely on track/slides
+                            container.classList.remove('p-8', 'md:p-10', 'flex', 'flex-col', 'justify-between', 'border', 'border-gray-100', 'bg-white', 'shadow-sm', 'hover:shadow-md');
+                            // Ensure container allows 3D
+                            container.classList.add('perspective-1000');
+
+                            // 2. Create Slides (Faces)
+                            const dataA = testimonials[config.pair[0]];
+                            const dataB = testimonials[config.pair[1]];
+
+                            // Slide 1 (Front - Light)
+                            const slide1 = document.createElement('div');
+                            slide1.className = 'col-start-1 row-start-1 w-full h-full flex flex-col justify-between p-8 md:p-10 select-none bg-white backface-hidden rounded-[2rem] border border-gray-100 shadow-sm z-10';
+                            if (dataA.type === 'wide') { slide1.classList.add('md:flex-row', 'gap-6'); slide1.classList.remove('flex-col'); }
+                            slide1.innerHTML = getCardContent(dataA, false);
+
+                            // Slide 2 (Back - Dark)
+                            const slide2 = document.createElement('div');
+                            slide2.className = 'col-start-1 row-start-1 w-full h-full flex flex-col justify-between p-8 md:p-10 select-none bg-[#1a1a1a] text-white backface-hidden rotate-y-180 rounded-[2rem] shadow-sm';
+                            if (dataB.type === 'wide') { slide2.classList.add('md:flex-row', 'gap-6'); slide2.classList.remove('flex-col'); }
+                            slide2.innerHTML = getCardContent(dataB, true);
+
+                            // Assemble
+                            track.appendChild(slide1);
+                            track.appendChild(slide2);
+                            container.appendChild(track);
+
+                            // 3. Drag Logic
+                            let isDragging = false;
+                            let startPos = 0;
+                            let currentTranslate = 0;
+                            let prevTranslate = 0;
+                            let animationID;
+                            let currentIndex = 0;
+
+                            // Touch Events
+                            track.addEventListener('touchstart', touchStart);
+                            track.addEventListener('touchend', touchEnd);
+                            track.addEventListener('touchmove', touchMove);
+
+                            // Mouse Events
+                            track.addEventListener('mousedown', touchStart);
+                            track.addEventListener('mouseup', touchEnd);
+                            track.addEventListener('mouseleave', () => { if (isDragging) touchEnd() });
+                            track.addEventListener('mousemove', touchMove);
+
+                            window.oncontextmenu = function (event) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                                return false;
+                            }
+
+                            function touchStart(event) {
+                                track.style.transition = 'none';
+                                track.classList.remove('animate-nudge'); // Stop hint
+                                isDragging = true;
+                                startPos = getPositionX(event);
+                                animationID = requestAnimationFrame(animation);
+                            }
+
+                            function touchMove(event) {
+                                if (isDragging) {
+                                    const currentPosition = getPositionX(event);
+                                    currentTranslate = prevTranslate + currentPosition - startPos;
+                                }
+                            }
+
+                            function touchEnd() {
+                                isDragging = false;
+                                cancelAnimationFrame(animationID);
+                                track.style.transition = 'transform 0.5s ease-out';
+
+                                const movedBy = currentTranslate - prevTranslate;
+
+                                // Snap Toggle Logic
+                                if (movedBy < -50) {
+                                    if (currentIndex === 0) currentIndex = 1;
+                                } else if (movedBy > 50) {
+                                    if (currentIndex === 1) currentIndex = 0;
+                                }
+
+                                setPositionByIndex();
+                            }
+
+                            function getPositionX(event) {
+                                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+                            }
+
+                            function animation() {
+                                setSliderPosition();
+                                if (isDragging) requestAnimationFrame(animation);
+                            }
+
+                            function setSliderPosition() {
+                                // Max rotation 180 degrees
+                                // Map currentTranslate to degrees
+                                // 1 pixel = 0.5 degree
+                                const rotation = Math.max(-180, Math.min(180, (currentTranslate * 0.5) + (currentIndex * 180)));
+                                track.style.transform = `rotateY(${rotation}deg)`;
+                            }
+
+                            function setPositionByIndex() {
+                                currentTranslate = 0;
+                                prevTranslate = 0;
+                                const targetRotation = currentIndex * 180;
+                                track.style.transform = `rotateY(${targetRotation}deg)`;
+                            }
+                        }
+
+                        // Initialize All
+                        document.addEventListener('DOMContentLoaded', () => {
+                            cardConfigs.forEach((config, i) => initSlider(config, i));
+                        });
+                    </script>
+                    <!-- Footer / Summary -->
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-gray-200/50">
+                        <p class="text-gray-600 font-medium mb-4 md:mb-0">1500+ satisfied members love our spaces</p>
+
+                        <div
+                            class="flex items-center space-x-4 bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm">
+                            <div class="flex text-brand-amber">★★★★★</div>
+                            <span class="text-gray-900 font-bold">4.9</span>
+                            <span class="text-gray-400 text-sm">Based on 1.5k reviews</span>
+                        </div>
+
+                        <a href="#"
+                            class="hidden md:flex items-center text-brand-charcoal font-bold hover:text-brand-amber transition-colors mt-4 md:mt-0">
+                            View all reviews
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Location Section -->
+            <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-2 text-brand-charcoal">Find Us</h2>
+                            <p class="text-gray-600">The perfect spot to work, play, and recover.</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-brand-amber/10 p-3 rounded-xl text-brand-amber mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Address</h4>
+                                    <p class="text-gray-500">Jalan Guru Bangkol, Pagesangan<br>Mataram, Nusa Tenggara
+                                        Barat</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-brand-amber/10 p-3 rounded-xl text-brand-amber mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Opening Hours</h4>
+                                    <p class="text-gray-500">Everyday: 7:00 AM - 11:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://maps.google.com/?q=WW+Space"
+                            class="inline-block text-brand-amber font-semibold hover:text-yellow-600 transition-colors">
+                            Get Directions &rarr;
+                        </a>
+                    </div>
+
+                    <div class="rounded-2xl overflow-hidden h-80 shadow-md border border-gray-200">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4170.980246964228!2d116.10074657526067!3d-8.599210991445954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdbfd61e8fd873%3A0x5d9bf955b82d36e3!2sWW%20Space!5e1!3m2!1sen!2sid!4v1769838981789!5m2!1sen!2sid"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-charcoal text-white py-12 px-4 rounded-t-3xl mt-12 mx-2">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-8 md:mb-0">
+                <h3 class="text-2xl font-bold mb-2">WW <span class="text-brand-amber">Space</span></h3>
+                <p class="text-gray-400">Jalan Guru Bangkol, Pagesangan</p>
+                <p class="text-gray-400">Mataram, Lombok</p>
+            </div>
+            <div class="flex space-x-6 text-gray-400">
+                <a href="#" class="hover:text-brand-amber transition-colors">Instagram</a>
+                <a href="#" class="hover:text-brand-amber transition-colors">WhatsApp</a>
+                <a href="#" class="hover:text-brand-amber transition-colors">Google Maps</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+            &copy; 2024 WW Space. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Reviews Auto-Scroll removed
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Billiards - Focus & Precision</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-brand-offwhite text-brand-charcoal font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-4 px-4">
+        <div class="max-w-7xl mx-auto bg-white/90 backdrop-blur-md rounded-2xl shadow-sm border border-gray-100 p-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold tracking-tight">WW <span
+                        class="text-brand-amber">Space</span></a>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="cafe.html" class="hover:text-brand-amber transition-colors font-medium">Cafe</a>
+                    <a href="arena.html" class="hover:text-brand-amber transition-colors font-medium">Arena</a>
+                    <a href="billiards.html" class="text-brand-amber font-semibold">Billiards</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-brand-charcoal focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 flex flex-col space-y-4">
+                <a href="cafe.html"
+                    class="block w-full text-center py-2 hover:bg-gray-50 rounded-xl transition-colors">Cafe</a>
+                <a href="arena.html"
+                    class="block w-full text-center py-2 hover:bg-gray-50 rounded-xl transition-colors">Arena</a>
+                <a href="billiards.html"
+                    class="block w-full text-center py-2 bg-gray-50 text-brand-amber rounded-xl font-medium">Billiards</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-12 px-4">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <!-- Header -->
+            <header class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-brand-charcoal mb-4">Focus & <span
+                        class="text-brand-amber">Precision</span></h1>
+                <p class="text-xl text-gray-500 max-w-2xl mx-auto">Premium tables, perfect ambiance, and good company.
+                </p>
+            </header>
+
+            <!-- Pricing Table -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Hourly Rate -->
+                <div
+                    class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="text-xl font-bold mb-2">Hourly Rate</h3>
+                    <p class="text-gray-400 text-sm mb-6">Per table, up to 4 players</p>
+                    <div class="text-4xl font-bold text-brand-amber mb-6">45k</div>
+                    <ul class="space-y-3 mb-8 text-gray-600 text-sm">
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>Pro 9ft Table</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>House Cues Included</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>Full AC Service</li>
+                    </ul>
+                    <a href="#"
+                        class="block w-full py-3 text-center border-2 border-brand-charcoal text-brand-charcoal font-bold rounded-xl hover:bg-brand-charcoal hover:text-white transition-colors">Book
+                        Table</a>
+                </div>
+
+                <!-- 10-Hour Pass (Highlighted) -->
+                <div
+                    class="bg-brand-charcoal text-white rounded-2xl p-8 border border-brand-charcoal shadow-xl relative overflow-hidden transform md:-translate-y-4">
+                    <div
+                        class="absolute top-0 right-0 bg-brand-amber text-brand-charcoal text-xs font-bold px-3 py-1 rounded-bl-xl">
+                        POPULAR</div>
+                    <h3 class="text-xl font-bold mb-2">Sharpshooter Pack</h3>
+                    <p class="text-gray-400 text-sm mb-6">10 Hours Credit</p>
+                    <div class="text-4xl font-bold text-brand-amber mb-6">400k</div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-brand-amber" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>Save 50k</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-brand-amber" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>Valid for 2 Months</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-brand-amber" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>Locker Storage</li>
+                    </ul>
+                    <a href="#"
+                        class="block w-full py-3 text-center bg-brand-amber text-brand-charcoal font-bold rounded-xl hover:bg-white hover:text-brand-charcoal transition-colors">Buy
+                        Now</a>
+                </div>
+
+                <!-- Membership -->
+                <div
+                    class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="text-xl font-bold mb-2">League Member</h3>
+                    <p class="text-gray-400 text-sm mb-6">Monthly Subscription</p>
+                    <div class="text-4xl font-bold text-brand-amber mb-6">750k</div>
+                    <ul class="space-y-3 mb-8 text-gray-600 text-sm">
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>Unlimited Play (Off-Peak)</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>Cafe Discount 15%</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>Priority Booking</li>
+                    </ul>
+                    <a href="#"
+                        class="block w-full py-3 text-center border-2 border-brand-charcoal text-brand-charcoal font-bold rounded-xl hover:bg-brand-charcoal hover:text-white transition-colors">Join
+                        Club</a>
+                </div>
+            </section>
+
+            <!-- Lifestyle Gallery -->
+            <section>
+                <h2 class="text-2xl font-bold mb-6">The Vibes</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-96 md:h-80">
+                    <div class="col-span-2 row-span-2 rounded-2xl bg-gray-200 overflow-hidden relative group">
+                        <div
+                            class="absolute inset-0 bg-gray-400 flex items-center justify-center font-medium text-white/50 group-hover:bg-gray-500 transition-colors">
+                            Main Hall</div>
+                    </div>
+                    <div class="rounded-2xl bg-gray-200 overflow-hidden relative group">
+                        <div
+                            class="absolute inset-0 bg-gray-300 flex items-center justify-center font-medium text-white/50 group-hover:bg-gray-400 transition-colors">
+                            Lounge Area</div>
+                    </div>
+                    <div class="rounded-2xl bg-gray-200 overflow-hidden relative group">
+                        <div
+                            class="absolute inset-0 bg-gray-300 flex items-center justify-center font-medium text-white/50 group-hover:bg-gray-400 transition-colors">
+                            Pro Shop</div>
+                    </div>
+                    <div class="col-span-2 md:col-span-2 rounded-2xl bg-gray-200 overflow-hidden relative group">
+                        <div
+                            class="absolute inset-0 bg-gray-300 flex items-center justify-center font-medium text-white/50 group-hover:bg-gray-400 transition-colors">
+                            Night Vibes</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-charcoal text-white py-12 px-4 rounded-t-3xl mt-12 mx-2">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-8 md:mb-0">
+                <h3 class="text-2xl font-bold mb-2">WW <span class="text-brand-amber">Space</span></h3>
+                <p class="text-gray-400">Jalan Guru Bangkol, Pagesangan</p>
+                <p class="text-gray-400">Mataram, Lombok</p>
+            </div>
+            <div class="flex space-x-6 text-gray-400">
+                <a href="#" class="hover:text-brand-amber transition-colors">Instagram</a>
+                <a href="#" class="hover:text-brand-amber transition-colors">WhatsApp</a>
+                <a href="#" class="hover:text-brand-amber transition-colors">Google Maps</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+            &copy; 2024 WW Space. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

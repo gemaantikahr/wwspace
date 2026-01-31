@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW Cafe - Deep Work & Fuel</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-brand-offwhite text-brand-charcoal font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-4 px-4">
+        <div class="max-w-7xl mx-auto bg-white/90 backdrop-blur-md rounded-2xl shadow-sm border border-gray-100 p-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold tracking-tight">WW <span
+                        class="text-brand-amber">Space</span></a>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="cafe.html" class="text-brand-amber font-semibold">Cafe</a>
+                    <a href="arena.html" class="hover:text-brand-amber transition-colors font-medium">Arena</a>
+                    <a href="billiards.html" class="hover:text-brand-amber transition-colors font-medium">Billiards</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-brand-charcoal focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-100 flex flex-col space-y-4">
+                <a href="cafe.html"
+                    class="block w-full text-center py-2 bg-gray-50 text-brand-amber rounded-xl font-medium">Cafe</a>
+                <a href="arena.html"
+                    class="block w-full text-center py-2 hover:bg-gray-50 rounded-xl transition-colors">Arena</a>
+                <a href="billiards.html"
+                    class="block w-full text-center py-2 hover:bg-gray-50 rounded-xl transition-colors">Billiards</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-12 px-4">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <!-- Header -->
+            <header class="text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-bold text-brand-charcoal mb-4">Deep Work & <span
+                        class="text-brand-amber">Fuel</span></h1>
+                <p class="text-xl text-gray-500 max-w-2xl">Productive vibes, lightning-fast internet, and
+                    nutrition-focused menu to keep you going.</p>
+            </header>
+
+            <!-- Amenities Grid -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                    <div class="bg-brand-amber/10 p-3 rounded-xl text-brand-amber">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">High-Speed Wi-Fi</h3>
+                        <p class="text-gray-500 text-sm">Dedicated Fiber Line</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                    <div class="bg-brand-amber/10 p-3 rounded-xl text-brand-amber">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Power Everywhere</h3>
+                        <p class="text-gray-500 text-sm">Plugs at Every Seat</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                    <div class="bg-brand-amber/10 p-3 rounded-xl text-brand-amber">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Quiet Zones</h3>
+                        <p class="text-gray-500 text-sm">Focus-Optimized Spaces</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Menu Section -->
+            <section>
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-3xl font-bold">Digital Menu</h2>
+                    <span class="text-sm bg-brand-charcoal text-white px-3 py-1 rounded-full">Order at Counter</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Smoothie Bowls -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="bg-yellow-100 h-48 w-full flex items-center justify-center text-brand-amber/50">
+                            <!-- Placeholder Image -->
+                            <span class="font-medium">Specials Image</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-4 text-brand-amber">Signature Bowls</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-start border-b border-gray-50 pb-4">
+                                    <div>
+                                        <h4 class="font-bold text-brand-charcoal">Tropical Acai</h4>
+                                        <p class="text-sm text-gray-500">Pure acai, banana, granola, bee pollen</p>
+                                    </div>
+                                    <span class="font-semibold">65k</span>
+                                </div>
+                                <div class="flex justify-between items-start border-b border-gray-50 pb-4">
+                                    <div>
+                                        <h4 class="font-bold text-brand-charcoal">Green Machine</h4>
+                                        <p class="text-sm text-gray-500">Spinach, mango, pineapple, coconut flakes</p>
+                                    </div>
+                                    <span class="font-semibold">60k</span>
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-brand-charcoal">Dragon Dream</h4>
+                                        <p class="text-sm text-gray-500">Pink dragon fruit, papaya, chia seeds</p>
+                                    </div>
+                                    <span class="font-semibold">60k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coffee & Juices -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="bg-orange-100 h-48 w-full flex items-center justify-center text-brand-amber/50">
+                            <!-- Placeholder Image -->
+                            <span class="font-medium">Beverage Image</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-4 text-brand-amber">Energy & Refreshment</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-start border-b border-gray-50 pb-4">
+                                    <div>
+                                        <h4 class="font-bold text-brand-charcoal">Cold Brew</h4>
+                                        <p class="text-sm text-gray-500">Steeped 24hrs, smooth finish</p>
+                                    </div>
+                                    <span class="font-semibold">35k</span>
+                                </div>
+                                <div class="flex justify-between items-start border-b border-gray-50 pb-4">
+                                    <div>
+                                        <h4 class="font-bold text-brand-charcoal">Fresh Coconut</h4>
+                                        <p class="text-sm text-gray-500">Whole young coconut, chilled</p>
+                                    </div>
+                                    <span class="font-semibold">25k</span>
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-brand-charcoal">Immunity Shot</h4>
+                                        <p class="text-sm text-gray-500">Ginger, turmeric, lemon</p>
+                                    </div>
+                                    <span class="font-semibold">20k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-charcoal text-white py-12 px-4 rounded-t-3xl mt-12 mx-2">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-8 md:mb-0">
+                <h3 class="text-2xl font-bold mb-2">WW <span class="text-brand-amber">Space</span></h3>
+                <p class="text-gray-400">Jalan Guru Bangkol, Pagesangan</p>
+                <p class="text-gray-400">Mataram, Lombok</p>
+            </div>
+            <div class="flex space-x-6 text-gray-400">
+                <a href="#" class="hover:text-brand-amber transition-colors">Instagram</a>
+                <a href="#" class="hover:text-brand-amber transition-colors">WhatsApp</a>
+                <a href="#" class="hover:text-brand-amber transition-colors">Google Maps</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+            &copy; 2024 WW Space. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
