@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
             viewBox: '0 0 24 24'
         },
         {
+            name: 'Gym',
+            href: 'gym.html',
+            iconInner: '<path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48c0 26.5-21.5 48-48 48H352v32h32c26.5 0 48 21.5 48 48v48c0 26.5-21.5 48-48 48H352v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V448H160v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V448H48c-26.5 0-48-21.5-48-48V352c0-26.5 21.5-48 48-48h32V272H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48h48V64c0-17.7 14.3-32 32-32zm48 112v48h96V112H176zm96 288V352H176v48h96z" fill="currentColor"/>',
+            viewBox: '0 0 448 512'
+        },
+        {
             name: 'Arena',
             href: 'arena.html',
             iconInner: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />',

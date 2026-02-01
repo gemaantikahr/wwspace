@@ -27,6 +27,8 @@
             <div class="hidden md:flex items-center space-x-8 md:ml-auto">
                 <a href="cafe.html"
                     class="text-sm font-medium text-gray-600 hover:text-brand-amber transition-colors uppercase tracking-wider">Cafe</a>
+                <a href="gym.html"
+                    class="text-sm font-medium text-gray-600 hover:text-brand-amber transition-colors uppercase tracking-wider">Gym</a>
                 <a href="arena.html"
                     class="text-sm font-medium text-gray-600 hover:text-brand-amber transition-colors uppercase tracking-wider">Arena</a>
                 <a href="billiards.html"
@@ -118,8 +120,8 @@
                 </div>
             </section>
 
-            <!-- 3-Column Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- 4-Column Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 <!-- Cafe Card -->
                 <a href="cafe.html"
                     class="group relative h-96 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
@@ -143,6 +145,32 @@
                             class="text-3xl font-bold text-white group-hover:translate-x-2 transition-transform drop-shadow-md">
                             WW Cafe</h2>
                         <p class="text-gray-200 mt-2 font-medium">Deep Work & Fuel</p>
+                    </div>
+                </a>
+
+                <!-- Gym Card -->
+                <a href="gym.html"
+                    class="group relative h-96 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <img src="./assets/images/gym.png" alt="WW Gym"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-brand-charcoal/40 to-transparent transition-opacity duration-300">
+                    </div>
+
+                    <div class="absolute inset-0 flex flex-col justify-end p-8 z-10">
+                        <div
+                            class="h-16 w-16 mb-4 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-sm text-brand-amber border border-white/20">
+                            <!-- Gym Icon (Bodybuilder) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor"
+                                viewBox="0 0 512 512">
+                                <path
+                                    d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48c0 26.5-21.5 48-48 48H352v32h32c26.5 0 48 21.5 48 48v48c0 26.5-21.5 48-48 48H352v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V448H160v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V448H48c-26.5 0-48-21.5-48-48V352c0-26.5 21.5-48 48-48h32V272H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48h48V64c0-17.7 14.3-32 32-32zm48 112v48h96V112H176zm96 288V352H176v48h96z" />
+                            </svg>
+                        </div>
+                        <h2
+                            class="text-3xl font-bold text-white group-hover:translate-x-2 transition-transform drop-shadow-md">
+                            WW Gym</h2>
+                        <p class="text-gray-200 mt-2 font-medium">Forged in Sweat</p>
                     </div>
                 </a>
 
@@ -762,17 +790,7 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
-
-
+    <script src="./assets/js/navbar.js"></script>
 </body>
 
 </html>
