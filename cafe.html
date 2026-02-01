@@ -5,22 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WW Cafe - Deep Work & Fuel</title>
-    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            amber: '#f59e0b',
+                            charcoal: '#1f2937',
+                            offwhite: '#f9fafb',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Hide scrollbar for Chrome, Safari and Opera */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
 
-        /* Hide scrollbar for IE, Edge and Firefox */
         .no-scrollbar {
             -ms-overflow-style: none;
-            /* IE and Edge */
             scrollbar-width: none;
-            /* Firefox */
         }
 
         @keyframes fadeIn {
@@ -38,477 +52,348 @@
         .animate-fadeIn {
             animation: fadeIn 0.5s ease-out forwards;
             opacity: 0;
-            /* Start hidden */
+        }
+
+        .scroll-snap-x {
+            scroll-snap-type: x mandatory;
         }
     </style>
 </head>
 
-<body class="bg-brand-offwhite text-brand-charcoal font-sans antialiased">
-    <!-- Navigation -->
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-4 px-4">
-        <div class="w-full max-w-7xl mx-auto bg-white/90 backdrop-blur-md rounded-2xl shadow-sm border border-gray-100 p-4 flex flex-col md:flex-row items-center md:justify-between"
-            style="justify-content: space-between; background-image: url(&quot;data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='%236b7280' fill-opacity='0.15'/%3E%3C/svg%3E&quot;);">
-            <a href="index.html" class="flex items-center gap-2 mb-2 md:mb-0">
-                <img src="./assets/images/logo.jpg" alt="WW Space Logo"
-                    class="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover shadow-sm">
-                <span class="text-xl md:text-2xl font-bold tracking-tight">WW <span
+<body class="bg-brand-offwhite text-brand-charcoal font-sans antialiased relative">
+
+    <nav class="fixed w-full z-50 top-0 md:top-4 px-0 md:px-4 transition-all duration-300">
+        <div
+            class="w-full max-w-7xl mx-auto bg-white/95 backdrop-blur-md md:rounded-2xl shadow-sm border-b md:border border-gray-100 p-4 flex items-center justify-between relative z-50">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="h-9 w-9 md:h-12 md:w-12 rounded-full bg-gray-200 overflow-hidden shadow-sm relative">
+                    <img src="./assets/images/logo.jpg" alt="WW" class="absolute inset-0 w-full h-full object-cover">
+                </div>
+                <span class="text-lg md:text-2xl font-bold tracking-tight">WW <span
                         class="text-brand-amber">Space</span></span>
             </a>
-
-            <!-- Desktop Menu -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
             <div class="hidden md:flex items-center space-x-8 md:ml-auto">
-                <a href="cafe.html"
-                    class="text-sm font-medium text-brand-amber transition-colors uppercase tracking-wider">Cafe</a>
+                <a href="cafe.html" class="text-sm font-bold text-brand-amber uppercase tracking-wider">Cafe</a>
                 <a href="arena.html"
                     class="text-sm font-medium text-gray-600 hover:text-brand-amber transition-colors uppercase tracking-wider">Arena</a>
                 <a href="billiards.html"
                     class="text-sm font-medium text-gray-600 hover:text-brand-amber transition-colors uppercase tracking-wider">Billiards</a>
             </div>
         </div>
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 md:hidden flex-col p-4 space-y-4 z-40">
+            <a href="cafe.html"
+                class="block w-full text-center py-3 rounded-lg bg-brand-amber/10 text-brand-amber font-bold">Cafe</a>
+            <a href="arena.html"
+                class="block w-full text-center py-3 rounded-lg text-gray-600 hover:bg-gray-50">Arena</a>
+            <a href="billiards.html"
+                class="block w-full text-center py-3 rounded-lg text-gray-600 hover:bg-gray-50">Billiards</a>
+        </div>
     </nav>
 
-    <script src="./assets/js/navbar.js"></script>
+    <main class="pt-20 md:pt-32 pb-12 px-3 md:px-6">
+        <div class="max-w-7xl mx-auto space-y-8 md:space-y-12">
 
-    <main class="pt-28 pb-12 px-4">
-        <div class="max-w-7xl mx-auto space-y-12">
-            <!-- Header -->
-            <header class="text-center md:text-left">
-                <h1 class="text-4xl md:text-6xl font-bold text-brand-charcoal mb-4">Deep Work & <span
+            <header class="text-left mt-4 md:mt-0 px-1">
+                <h1 class="text-3xl md:text-6xl font-bold text-brand-charcoal mb-2 md:mb-3">Deep Work & <span
                         class="text-brand-amber">Fuel</span></h1>
-                <p class="text-xl text-gray-500 max-w-2xl">Productive vibes, lightning-fast internet, and
-                    nutrition-focused menu to keep you going.</p>
+                <p class="text-sm md:text-xl text-gray-500 max-w-2xl leading-relaxed">Productive vibes, lightning-fast
+                    internet, and a nutrition-focused menu.</p>
             </header>
 
-            <!-- Amenities Grid -->
-            <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
-                    <div class="bg-brand-amber/10 p-3 rounded-xl text-brand-amber">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
+                <div
+                    class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                    <div class="bg-brand-amber/10 p-2.5 rounded-lg text-brand-amber shrink-0">
+                        <svg class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg">High-Speed Wi-Fi</h3>
-                        <p class="text-gray-500 text-sm">Dedicated Fiber Line</p>
+                        <h3 class="font-bold text-sm md:text-lg">High-Speed Wi-Fi</h3>
+                        <p class="text-gray-500 text-xs md:text-sm">Dedicated Fiber Line</p>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
-                    <div class="bg-brand-amber/10 p-3 rounded-xl text-brand-amber">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
+                <div
+                    class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                    <div class="bg-brand-amber/10 p-2.5 rounded-lg text-brand-amber shrink-0">
+                        <svg class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg">Power Everywhere</h3>
-                        <p class="text-gray-500 text-sm">Plugs at Every Seat</p>
+                        <h3 class="font-bold text-sm md:text-lg">Power Everywhere</h3>
+                        <p class="text-gray-500 text-xs md:text-sm">Plugs at Every Seat</p>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
-                    <div class="bg-brand-amber/10 p-3 rounded-xl text-brand-amber">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
+                <div
+                    class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4">
+                    <div class="bg-brand-amber/10 p-2.5 rounded-lg text-brand-amber shrink-0">
+                        <svg class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg">Quiet Zones</h3>
-                        <p class="text-gray-500 text-sm">Focus-Optimized Spaces</p>
+                        <h3 class="font-bold text-sm md:text-lg">Quiet Zones</h3>
+                        <p class="text-gray-500 text-xs md:text-sm">Focus-Optimized</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Menu Section -->
-            <section>
-                <div class="flex items-center justify-between mb-8">
-                    <h2 class="text-3xl font-bold">Digital Menu</h2>
-                    <span class="text-sm bg-brand-charcoal text-white px-3 py-1 rounded-full">Order at Counter</span>
+            <section class="relative">
+                <div class="flex items-center justify-between mb-4 px-1">
+                    <h2 class="text-xl md:text-3xl font-bold">Menu</h2>
+                    <span class="text-[10px] md:text-sm bg-brand-charcoal text-white px-2 py-1 rounded-full">Order at
+                        Counter</span>
                 </div>
 
-                <!-- Category Filter Bar -->
-                <div class="flex overflow-x-auto pb-4 mb-6 gap-3 no-scrollbar" id="category-filter">
-                    <!-- Buttons injected by JS -->
+                <div
+                    class="sticky top-[68px] md:top-[88px] z-30 -mx-3 px-3 md:mx-0 md:px-0 bg-brand-offwhite/95 backdrop-blur-sm py-2 mb-4">
+                    <div class="flex overflow-x-auto gap-2 no-scrollbar scroll-snap-x pb-1" id="category-filter">
+                    </div>
                 </div>
 
-                <div id="cafe-menu-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <!-- Javascript will populate items here -->
+                <div id="cafe-menu-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 pb-8">
                 </div>
             </section>
 
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    // Menu Data from Image Transcription
-                    const params = [
-                        // --- ESPRESSO BASED ---
-                        {
-                            img: './assets/images/menu_1.png',
-                            title: 'Magic Latte',
-                            desc: 'Ristretto method for a stronger, creamier coffee experience.',
-                            price: '30k',
-                            time: '5m',
-                            calories: '180 cal',
-                            category: 'Espresso Based',
-                            isFavorite: true
-                        },
-                        {
-                            img: './assets/images/menu_1.png',
-                            title: 'Caffe Latte',
-                            desc: 'One shot espresso with fresh milk and microfoam.',
-                            price: '25k', // Using Hot price
-                            time: '5m',
-                            calories: '150 cal',
-                            category: 'Espresso Based',
-                            isFavorite: false
-                        },
-                        {
-                            img: './assets/images/menu_1.png',
-                            title: 'Affogato',
-                            desc: 'One shot espresso served over vanilla ice cream.',
-                            price: '26k',
-                            time: '5m',
-                            calories: '220 cal',
-                            category: 'Espresso Based',
-                            isFavorite: false
-                        },
-
-                        // --- ICE COFFEE ---
-                        {
-                            img: './assets/images/menu_1.png',
-                            title: 'Butterscoth',
-                            desc: 'Creamy iced milk coffee with sweet butterscotch richness.',
-                            price: '30k',
-                            time: '3m',
-                            calories: '280 cal',
-                            category: 'Ice Coffee',
-                            isFavorite: true
-                        },
-                        {
-                            img: './assets/images/menu_1.png',
-                            title: 'Creamoso',
-                            desc: 'Iced milk coffee blended with vanilla and ice cream.',
-                            price: '30k',
-                            time: '5m',
-                            calories: '320 cal',
-                            category: 'Ice Coffee',
-                            isFavorite: true
-                        },
-                        {
-                            img: './assets/images/menu_1.png',
-                            title: 'Kuwud',
-                            desc: 'Unique blend of young coconut water and milk coffee.',
-                            price: '30k',
-                            time: '3m',
-                            calories: '160 cal',
-                            category: 'Ice Coffee',
-                            isFavorite: false
-                        },
-
-                        // --- NON-COFFEE ---
-                        {
-                            img: './assets/images/menu_4.png',
-                            title: 'Matcha',
-                            desc: 'Premium green tea powder blended with fresh milk.',
-                            price: '25k',
-                            time: '4m',
-                            calories: '210 cal',
-                            category: 'Non-Coffee',
-                            isFavorite: false
-                        },
-                        {
-                            img: './assets/images/menu_4.png',
-                            title: 'Berry Crumb',
-                            desc: 'Creamy milk, oreo crumb, and pure strawberry puree.',
-                            price: '30k',
-                            time: '5m',
-                            calories: '350 cal',
-                            category: 'Non-Coffee',
-                            isFavorite: true
-                        },
-
-                        // --- MOCKTAIL ---
-                        {
-                            img: './assets/images/menu_4.png',
-                            title: 'Sunpeach',
-                            desc: 'Fresh soda with peach, lemonade, and hint of vanilla.',
-                            price: '30k',
-                            time: '3m',
-                            calories: '120 cal',
-                            category: 'Mocktail',
-                            isFavorite: false
-                        },
-                        {
-                            img: './assets/images/menu_4.png',
-                            title: 'Bluecoast',
-                            desc: 'Tropical blue, peach, and distinctive nuances.',
-                            price: '30k',
-                            time: '3m',
-                            calories: '130 cal',
-                            category: 'Mocktail',
-                            isFavorite: false
-                        },
-
-                        // --- RICEBOWL FUSION ---
-                        {
-                            img: './assets/images/menu_3.png',
-                            title: 'Salted Egg',
-                            desc: 'Crispy chicken coated in signature WW salted egg sauce.',
-                            price: '33k',
-                            time: '15m',
-                            calories: '550 cal',
-                            category: 'Ricebowl Fusion',
-                            isFavorite: true
-                        },
-                        {
-                            img: './assets/images/menu_3.png',
-                            title: 'Balinese',
-                            desc: 'Crispy chicken with sambal matah and sauteed broccoli.',
-                            price: '33k',
-                            time: '15m',
-                            calories: '500 cal',
-                            category: 'Ricebowl Fusion',
-                            isFavorite: false
-                        },
-
-                        // --- NUSANTARA ---
-                        {
-                            img: './assets/images/menu_3.png',
-                            title: 'Gubang Fried Rice',
-                            desc: 'Traditional fried rice with chicken, egg, and pickles.',
-                            price: '33k',
-                            time: '12m',
-                            calories: '600 cal',
-                            category: 'Nusantara',
-                            isFavorite: true
-                        },
-                        {
-                            img: './assets/images/menu_3.png',
-                            title: 'KwetiaWW',
-                            desc: 'Signature fried kwetiau with seafood or chicken.',
-                            price: '30k',
-                            time: '12m',
-                            calories: '580 cal',
-                            category: 'Nusantara',
-                            isFavorite: false
-                        },
-
-                        // --- WW CHOICE (Sandwich/Western) ---
-                        {
-                            img: './assets/images/menu_3.png',
-                            title: 'Beef Sandwich',
-                            desc: 'Ciabatta bread with smoked beef, onion, and cheese sauce.',
-                            price: '35k',
-                            time: '10m',
-                            calories: '450 cal',
-                            category: 'WW Choice',
-                            isFavorite: false
-                        },
-                        {
-                            img: './assets/images/menu_3.png',
-                            title: 'WW Beef Tortilla',
-                            desc: 'Tortilla wrap with minced beef, tomato, lettuce, and cheese.',
-                            price: '35k',
-                            time: '10m',
-                            calories: '420 cal',
-                            category: 'WW Choice',
-                            isFavorite: true
-                        },
-
-                        // --- PASTA ---
-                        {
-                            img: './assets/images/menu_3.png',
-                            title: 'Carbonara',
-                            desc: 'Spaghetti with creamy mascarpone sauce and smoked beef.',
-                            price: '33k',
-                            time: '15m',
-                            calories: '650 cal',
-                            category: 'Pasta',
-                            isFavorite: true
-                        },
-                        {
-                            img: './assets/images/menu_3.png',
-                            title: 'Aglio O lio',
-                            desc: 'Classic spaghetti with garlic oil, garlic, and chilli.',
-                            price: '33k',
-                            time: '12m',
-                            calories: '400 cal',
-                            category: 'Pasta',
-                            isFavorite: false
-                        },
-
-                        // --- SNACKS ---
-                        {
-                            img: './assets/images/menu_2.png',
-                            title: 'Chicken Karage',
-                            desc: 'Japanese style fried chicken fillet with special sauce.',
-                            price: '30k',
-                            time: '10m',
-                            calories: '350 cal',
-                            category: 'Snacks',
-                            isFavorite: false
-                        },
-                        {
-                            img: './assets/images/menu_2.png',
-                            title: 'Edamame',
-                            desc: 'Steamed soybeans served with garlic salt.',
-                            price: '23k',
-                            time: '5m',
-                            calories: '120 cal',
-                            category: 'Snacks',
-                            isFavorite: false
-                        },
-
-                        // --- DESSERT ---
-                        {
-                            img: './assets/images/menu_2.png',
-                            title: 'Churros',
-                            desc: 'Fried dough pastry with chocolate or strawberry dip.',
-                            price: '27k',
-                            time: '10m',
-                            calories: '380 cal',
-                            category: 'Dessert',
-                            isFavorite: true
-                        },
-                        {
-                            img: './assets/images/menu_2.png',
-                            title: 'Banana Fritter',
-                            desc: 'Fried banana with honey and chocolate drift.',
-                            price: '27k',
-                            time: '8m',
-                            calories: '320 cal',
-                            category: 'Dessert',
-                            isFavorite: false
-                        }
-                    ];
-
-                    const grid = document.getElementById('cafe-menu-grid');
-                    const filterContainer = document.getElementById('category-filter');
-
-                    // 1. Get Unique Categories
-                    const categories = ['All', ...new Set(params.map(item => item.category))];
-
-                    // 2. Render Filter Buttons
-                    let activeCategory = 'All';
-
-                    function renderFilters() {
-                        filterContainer.innerHTML = categories.map(cat => {
-                            const isActive = cat === activeCategory;
-                            return `
-                                <button onclick="selectCategory('${cat}')"
-                                    class="whitespace-nowrap px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 border ${isActive ? 'bg-brand-amber text-white border-brand-amber' : 'bg-white text-gray-500 border-gray-200 hover:border-brand-amber hover:text-brand-amber'}">
-                                    ${cat}
-                                </button>
-                            `;
-                        }).join('');
-                    }
-
-                    // 3. Expose Selection Function
-                    window.selectCategory = (cat) => {
-                        activeCategory = cat;
-                        renderFilters();
-                        renderGrid();
-                    };
-
-                    // 4. Render Grid Logic
-                    function renderGrid() {
-                        const filteredItems = activeCategory === 'All'
-                            ? params
-                            : params.filter(item => item.category === activeCategory);
-
-                        let html = '';
-
-                        filteredItems.forEach((item, index) => {
-                            // Conditional Favorite Badge
-                            const favBadge = item.isFavorite ? `
-                            <div class="absolute top-3 right-3 bg-brand-amber text-white px-2 py-1 rounded-full shadow-md flex items-center space-x-1 z-10">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <span class="text-[10px] font-bold uppercase tracking-wide">Best Seller</span>
-                            </div>` : '';
-
-                            html += `
-                            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full relative animate-fadeIn" style="animation-delay: ${index * 50}ms">
-                                <!-- Image Area -->
-                                <div class="h-48 w-full overflow-hidden relative shrink-0">
-                                    <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
-                                    ${favBadge}
-                                </div>
-                                
-                                <!-- Content -->
-                                <div class="p-6 flex flex-col flex-grow relative">
-                                    <!-- Category Badge (Visual Match: px-4, Title Case, text-sm) -->
-                                    <div class="mb-2">
-                                        <span class="inline-block px-4 py-1.5 rounded-full bg-white text-brand-amber text-sm font-bold capitalize tracking-wide border border-gray-200 shadow-sm">${item.category.toLowerCase()}</span>
-                                    </div>
-
-                                    <!-- Header -->
-                                    <div class="flex justify-between items-start mb-3">
-                                        <h3 class="font-bold text-brand-charcoal text-xl tracking-tight leading-tight group-hover:text-brand-amber transition-colors">${item.title}</h3>
-                                        <div class="flex flex-col items-end">
-                                             <span class="font-bold text-brand-amber text-lg">${item.price}</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Description -->
-                                    <p class="text-xs text-gray-500 mb-6 leading-relaxed line-clamp-2 font-medium">${item.desc}</p>
-                                    
-                                    <!-- Footer Meta -->
-                                    <div class="mt-auto flex items-center gap-4 pt-4 border-t border-gray-50 text-xs text-gray-400 font-semibold tracking-wide uppercase">
-                                        <div class="flex items-center gap-1.5">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-amber/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                            <span>${item.time}</span>
-                                        </div>
-                                        <div class="w-px h-3 bg-gray-200"></div>
-                                        <div class="flex items-center gap-1.5">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-amber/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
-                                            </svg>
-                                            <span>${item.calories}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            `;
-                        });
-
-                        grid.innerHTML = html;
-                    }
-
-                    // Initial Render
-                    renderFilters();
-                    renderGrid();
-                });
-            </script>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-brand-charcoal text-white py-12 px-4 rounded-t-3xl mt-12 mx-2">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <div class="mb-8 md:mb-0">
-                <h3 class="text-2xl font-bold mb-2">WW <span class="text-brand-amber">Space</span></h3>
-                <p class="text-gray-400">Jalan Guru Bangkol, Pagesangan</p>
-                <p class="text-gray-400">Mataram, Lombok</p>
+    <footer class="bg-brand-charcoal text-white py-8 px-6 rounded-t-3xl mt-auto">
+        <div
+            class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
+            <div>
+                <h3 class="text-xl font-bold mb-1">WW <span class="text-brand-amber">Space</span></h3>
+                <p class="text-gray-400 text-xs md:text-sm">Jalan Guru Bangkol, Pagesangan<br>Mataram, Lombok</p>
             </div>
-            <div class="flex space-x-6 text-gray-400">
-                <a href="#" class="hover:text-brand-amber transition-colors">Instagram</a>
-                <a href="#" class="hover:text-brand-amber transition-colors">WhatsApp</a>
-                <a href="#" class="hover:text-brand-amber transition-colors">Google Maps</a>
+            <div class="flex space-x-6 text-gray-400 text-xs md:text-sm">
+                <a href="#" class="hover:text-brand-amber">Instagram</a>
+                <a href="#" class="hover:text-brand-amber">WhatsApp</a>
+                <a href="#" class="hover:text-brand-amber">Maps</a>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-12 border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+        <div
+            class="max-w-7xl mx-auto mt-6 border-t border-gray-800 pt-6 text-center text-gray-600 text-[10px] md:text-xs">
             &copy; 2024 WW Space. All rights reserved.
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
 
+            // Mobile Menu
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                menu.classList.toggle('flex');
+            });
+            document.addEventListener('click', (e) => {
+                if (!menu.contains(e.target) && !btn.contains(e.target) && !menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                }
+            });
+
+            // Data
+            const params = [
+                {
+                    img: './assets/images/menu_1.png',
+                    title: 'Magic Latte',
+                    desc: 'Ristretto method for a stronger experience.',
+                    price: '30k',
+                    time: '5m',
+                    calories: '180',
+                    category: 'Coffee',
+                    isFavorite: true
+                },
+                {
+                    img: './assets/images/menu_1.png',
+                    title: 'Caffe Latte',
+                    desc: 'Espresso with fresh milk and microfoam.',
+                    price: '25k',
+                    time: '5m',
+                    calories: '150',
+                    category: 'Coffee',
+                    isFavorite: false
+                },
+                {
+                    img: './assets/images/menu_1.png',
+                    title: 'Affogato',
+                    desc: 'Espresso served over vanilla ice cream.',
+                    price: '26k',
+                    time: '5m',
+                    calories: '220',
+                    category: 'Coffee',
+                    isFavorite: false
+                },
+                {
+                    img: './assets/images/menu_1.png',
+                    title: 'Butterscoth',
+                    desc: 'Creamy iced milk coffee with butterscotch.',
+                    price: '30k',
+                    time: '3m',
+                    calories: '280',
+                    category: 'Ice Coffee',
+                    isFavorite: true
+                },
+                {
+                    img: './assets/images/menu_1.png',
+                    title: 'Creamoso',
+                    desc: 'Iced milk coffee blended with vanilla.',
+                    price: '30k',
+                    time: '5m',
+                    calories: '320',
+                    category: 'Ice Coffee',
+                    isFavorite: true
+                },
+                {
+                    img: './assets/images/menu_4.png',
+                    title: 'Matcha',
+                    desc: 'Premium green tea powder with milk.',
+                    price: '25k',
+                    time: '4m',
+                    calories: '210',
+                    category: 'Non-Coffee',
+                    isFavorite: false
+                },
+                {
+                    img: './assets/images/menu_4.png',
+                    title: 'Berry Crumb',
+                    desc: 'Milk, oreo crumb, strawberry puree.',
+                    price: '30k',
+                    time: '5m',
+                    calories: '350',
+                    category: 'Non-Coffee',
+                    isFavorite: true
+                },
+                {
+                    img: './assets/images/menu_3.png',
+                    title: 'Salted Egg',
+                    desc: 'Chicken in signature salted egg sauce.',
+                    price: '33k',
+                    time: '15m',
+                    calories: '550',
+                    category: 'Ricebowl',
+                    isFavorite: true
+                },
+                {
+                    img: './assets/images/menu_3.png',
+                    title: 'Balinese',
+                    desc: 'Chicken with sambal matah.',
+                    price: '33k',
+                    time: '15m',
+                    calories: '500',
+                    category: 'Ricebowl',
+                    isFavorite: false
+                },
+                {
+                    img: './assets/images/menu_3.png',
+                    title: 'Beef Sandwich',
+                    desc: 'Ciabatta bread with smoked beef.',
+                    price: '35k',
+                    time: '10m',
+                    calories: '450',
+                    category: 'Food',
+                    isFavorite: false
+                }
+            ];
+
+            const grid = document.getElementById('cafe-menu-grid');
+            const filterContainer = document.getElementById('category-filter');
+            const categories = ['All', ...new Set(params.map(item => item.category))];
+            let activeCategory = 'All';
+
+            function renderFilters() {
+                filterContainer.innerHTML = categories.map(cat => {
+                    const isActive = cat === activeCategory;
+                    return `
+                        <button onclick="selectCategory('${cat}')"
+                            class="snap-start flex-shrink-0 whitespace-nowrap px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 border shadow-sm
+                            ${isActive
+                            ? 'bg-brand-amber text-white border-brand-amber'
+                            : 'bg-white text-gray-500 border-gray-200 hover:border-brand-amber hover:text-brand-amber'}">
+                            ${cat}
+                        </button>
+                    `;
+                }).join('');
+            }
+
+            window.selectCategory = (cat) => {
+                activeCategory = cat;
+                renderFilters();
+                renderGrid();
+
+                const gridOffset = grid.getBoundingClientRect().top + window.scrollY - 140;
+                if (window.innerWidth < 768) window.scrollTo({ top: gridOffset, behavior: 'smooth' });
+            };
+
+            function renderGrid() {
+                const filteredItems = activeCategory === 'All' ? params : params.filter(item => item.category === activeCategory);
+
+                if (filteredItems.length === 0) {
+                    grid.innerHTML = '<div class="col-span-full text-center text-gray-400 py-10 text-sm">No items found.</div>';
+                    return;
+                }
+
+                grid.innerHTML = filteredItems.map((item, index) => {
+                    const favBadge = item.isFavorite ? `
+                    <div class="absolute top-2 right-2 bg-brand-amber/90 backdrop-blur-sm text-white px-1.5 py-0.5 rounded-full shadow-sm z-10 flex items-center">
+                        <svg class="h-2.5 w-2.5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>` : '';
+
+                    return `
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-lg transition-all duration-300 flex flex-col h-full relative animate-fadeIn">
+                        
+                        <div class="h-28 md:h-48 w-full overflow-hidden relative shrink-0">
+                            <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/400x300?text=No+Image'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                            
+                            <span class="absolute top-2 left-2 bg-black/40 backdrop-blur-md text-white border border-white/20 px-2 py-0.5 rounded-md text-[9px] md:text-[10px] font-bold uppercase tracking-wider">
+                                ${item.category}
+                            </span>
+                            ${favBadge}
+                        </div>
+                        
+                        <div class="p-3 md:p-5 flex flex-col flex-grow relative">
+                            <div class="flex justify-between items-start mb-1 gap-1">
+                                <h3 class="font-bold text-brand-charcoal text-sm md:text-lg leading-tight line-clamp-1">${item.title}</h3>
+                                <span class="font-bold text-brand-amber text-sm md:text-lg whitespace-nowrap">${item.price}</span>
+                            </div>
+                            
+                            <p class="text-[10px] md:text-xs text-gray-500 mb-3 leading-snug line-clamp-2">${item.desc}</p>
+                            
+                            <div class="mt-auto flex items-center gap-2 md:gap-4 pt-2 md:pt-4 border-t border-gray-50 text-[10px] md:text-xs text-gray-400 font-medium">
+                                <div class="flex items-center gap-1">
+                                    <svg class="h-3 w-3 md:h-4 md:w-4 text-brand-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                    <span>${item.time}</span>
+                                </div>
+                                <div class="w-px h-2 bg-gray-200"></div>
+                                <div class="flex items-center gap-1">
+                                    <svg class="h-3 w-3 md:h-4 md:w-4 text-brand-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" /></svg>
+                                    <span>${item.calories}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                }).join('');
+            }
+
+            renderFilters();
+            renderGrid();
+        });
+    </script>
 </body>
 
 </html>
